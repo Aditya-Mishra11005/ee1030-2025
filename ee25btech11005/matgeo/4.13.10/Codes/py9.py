@@ -27,7 +27,7 @@ plt.plot(bisector_points[0,:], bisector_points[1,:], 'r-')
 plt.gca().set_aspect('equal')
 plt.xlabel('X')
 plt.ylabel('Y')
-plt.title('Triangle and Angle Bisector of angle ABC')
+plt.title('Triangle and Angle Bisector of angle ∠ABC')
 plt.grid(True)
 plt.show()
 

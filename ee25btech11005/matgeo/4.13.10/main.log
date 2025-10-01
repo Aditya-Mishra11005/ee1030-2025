@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.5)  1 OCT 2025 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.5)  1 OCT 2025 21:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1293,13 +1293,13 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-)
-No file main.aux.
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 10.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 10.
+
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
@@ -1392,6 +1392,8 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 10.
+ (./main.out)
+(./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -1400,8 +1402,7 @@ LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <20.74> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 13.
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13
 .
-
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 1
@@ -1446,21 +1447,14 @@ Package pdftex.def Info: Figs/Figure_1.png  used on input line 72.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 51314 strings out of 474222
- 1224129 string characters out of 5748734
+ 51322 strings out of 474222
+ 1224225 string characters out of 5748734
  1960052 words of memory out of 5000000
- 72792 multiletter control sequences out of 15000+600000
+ 72794 multiletter control sequences out of 15000+600000
  603275 words of font info for 149 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  109i,11n,109p,1194b,901s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1472,7 +1466,7 @@ blic/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
 s/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 74908 bytes).
+Output written on main.pdf (2 pages, 74875 bytes).
 PDF statistics:
  109 PDF objects out of 1000 (max. 8388607)
  68 compressed objects within 1 object stream
