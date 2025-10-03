@@ -30,30 +30,15 @@ Solve the equations:
 
 \begin{frame}{Forming Augmented Matrix}
 \[
-\left(
-\begin{array}{cc|c}
-5 & -3 & 11 \\
--10 & 6 & -22 \\
-\end{array}
-\right)
+\augvec{2}{1}{5 & -3 & 11 \\ -10 & 6 & -22}
 \]
 \end{frame}
 
 \begin{frame}{Row Operations}
 \[
-\left(
-\begin{array}{cc|c}
-5 & -3 & 11 \\
--10 & 6 & -22 \\
-\end{array}
-\right)
+\augvec{2}{1}{5 & -3 & 11 \\ -10 & 6 & -22}
 \xrightarrow{R_2 \rightarrow R_2 + 2R_1}
-\left(
-\begin{array}{cc|c}
-5 & -3 & 11 \\
-0 & 0 & 0 \\
-\end{array}
-\right)
+\augvec{2}{1}{5 & -3 & 11 \\ 0 & 0 & 0}
 \]
 
 The second row turns out to be all zeros, meaning the system is dependent and consistent.
@@ -65,10 +50,10 @@ From the first row:
 5x - 3y = 11 \implies x = \frac{11 + 3y}{5}
 \]
 
-Let \(\vec{y} = \lambda, \lambda \in \mathbb{R}\) \\
+Let \(\vec{y} = \lambda, \lambda \in \mathbb{R}\) \
 Then, the general solution is:
 \[
-\vec{x} = \myvec{\frac{11}{5} \\ 0} + \lambda \myvec{\frac{3}{5} \\ 1}, \quad \lambda \in \mathbb{R}
+\vec{x} = \myvec{\frac{11}{5} \ 0} + \lambda \myvec{\frac{3}{5} \ 1}, \quad \lambda \in \mathbb{R}
 \]
 \end{frame}
 
