@@ -1,75 +1,93 @@
 \documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{gvv-book}
 \usepackage{gvv}
 
 \title{\textbf{4.13.10}}
-\author{\textbf{Aditya Mishra - EE25BTECH}}
-\date{September 30, 2025}
+\author{\textbf{Aditya Mishra-EE25BTECH11005}}
+\date{October 3, 2025}
 
 \begin{document}
 
 \maketitle
 
 \section*{Question}
-
-The vertices of a triangle are 
 \[
-\vec{A} = \myvec{-1 \\ -7}, \quad 
-\vec{B} = \myvec{5 \\ 1}, \quad 
-\vec{C} = \myvec{1 \\ 10}.
+\vec{A} = \myvec{-1\\-7},\quad
+\vec{B} = \myvec{5\\1},\quad
+\vec{C} = \myvec{1\\10}
 \]
-Find the equation of the bisector of the angle \(\angle ABC\).
+Equation of the internal bisector of $\angle ABC$.
 
 \section*{Solution}
 
-Define vectors  
-\begin{equation}
-\vec{D} = \vec{A} - \vec{B} = \myvec{-1 - 5 \\-7 - 1} = \myvec{-6 \\ -8},
-\end{equation}
-\begin{equation}
-\vec{E} = \vec{C} - \vec{B} = \myvec{1 - 5 \\ 10 - 1} = \myvec{-4 \\ 9}.
-\end{equation}
+\[
+\text{Given lines } \vec{n}_1^{\top} \vec{x} = c_1, \quad \vec{n}_2^{\top} \vec{x} = c_2,
+\]
 
-Compute magnitudes:
-\begin{equation}
-\|\vec{D}\| = \sqrt{(-6)^2 + (-8)^2} = 10,
-\end{equation}
-\begin{equation}
-\|\vec{E}\| = \sqrt{(-4)^2 + 9^2} = \sqrt{97}.
-\end{equation}
+\[
+\text{Angle bisectors satisfy }
+\frac{|\vec{n}_1^{\top} \vec{x} - c_1|}{\|\vec{n}_1\|}
+= \frac{|\vec{n}_2^{\top} \vec{x} - c_2|}{\|\vec{n}_2\|}.
+\]
 
-Normalize:
-\begin{equation}
-\vec{e}_{D} = \frac{1}{10} \myvec{-6 \\ -8},
-\end{equation}
-\begin{equation}
-\vec{e}_{E} = \frac{1}{\sqrt{97}} \myvec{-4 \\ 9}.
-\end{equation}
+\[
+\Rightarrow \quad
+\frac{\vec{n}_1^{\top} \vec{x} - c_1}{\|\vec{n}_1\|}
+= \pm \frac{\vec{n}_2^{\top} \vec{x} - c_2}{\|\vec{n}_2\|}.
+\]
 
-The angle bisector vector \(\vec{L}\) is along the sum of normalized vectors:
-\begin{equation}
-\vec{L} = \vec{e}_{D} + \vec{e}_{E} 
-= \myvec{-\frac{6}{10} - \frac{4}{\sqrt{97}} \\[6pt]
-       -\frac{8}{10} + \frac{9}{\sqrt{97}}}.
-\end{equation}
+\[
+\text{Internal bisector: sign chosen so that for }
+\vec{u} =
+\frac{\vec{A}-\vec{B}}{\|\vec{A}-\vec{B}\|}
++
+\frac{\vec{C}-\vec{B}}{\|\vec{C}-\vec{B}\|},
+\quad
+\text{we have }
+\operatorname{sgn}(\vec{n}_1^{\top} \vec{u}) = -\operatorname{sgn}(\vec{n}_2^{\top} \vec{u})
+\]
 
-The line along the bisector passes through \(\vec{B}\), so the vector equation is:
-\begin{equation}
-\vec{x} = \vec{B} + \lambda \vec{L}, \quad \lambda \in \mathbb{R}.
-\end{equation}
+Normals:
+\begin{align}
+\vec{n}_1 &= \myvec{-8\\6} \\
+\vec{n}_2 &= \myvec{9\\4}
+\end{align}
+Norms:
+\begin{align}
+\|\vec{n}_1\| &= \sqrt{(-8)^2 + 6^2} = 10 \\
+\|\vec{n}_2\| &= \sqrt{9^2 + 4^2} = \sqrt{97}
+\end{align}
+Equation of angle bisector:
+\[
+\frac{\vec{n}_1^{\top} (\vec{x} - \vec{B})}{10}
+=
+-\frac{\vec{n}_2^{\top} (\vec{x} - \vec{B})}{\sqrt{97}}
+\]
+Thus,
+\[
+\sqrt{97}\,\vec{n}_1^{\top} (\vec{x} - \vec{B}) + 10\,\vec{n}_2^{\top} (\vec{x} - \vec{B}) = 0
+\]
 
-\begin{equation}
-\Rightarrow \vec{x} = \myvec{5 \\ 1} + \lambda \myvec{-\frac{6}{10} - \frac{4}{\sqrt{97}} \\[6pt]
-       -\frac{8}{10} + \frac{9}{\sqrt{97}} }.
-\end{equation}
+With
+$\vec{B} = \myvec{5\\1}$, equation of Angle Bisector is:
 
-This is the equation of the bisector of \(\angle ABC\).
+\begin{align*}
+\boxed{ \myvec{90-8\sqrt{97} \\ 40+6\sqrt{97}}^T \vec{x} + (34\sqrt{97}-490) = 0 }
+\end{align*}
 
-\section*{Plot}
+\text{Or,}
+\begin{align*}
+\boxed{\vec{x} = \myvec{5 \\ 1} + \lambda\myvec{40+6\sqrt{97} \\ -(90-8\sqrt{97})},\quad \lambda \in \mathbb{R}}
+\end{align*}
+
+\textbf{Plot}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{Figs/Figure_1.png}
+    \includegraphics[width=0.8\columnwidth]{Figs/Figure_1.png}
 \end{figure}
+
 \end{document}
 

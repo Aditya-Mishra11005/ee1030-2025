@@ -19,6 +19,11 @@ plt.plot([C[0], A[0]], [C[1], A[1]], 'k-')
 
 plt.scatter([A[0], B[0], C[0]], [A[1], B[1], C[1]], color='blue')
 
+# Label the points
+plt.text(A[0], A[1], 'A', fontsize=12, verticalalignment='bottom', horizontalalignment='right')
+plt.text(B[0], B[1], 'B', fontsize=12, verticalalignment='bottom', horizontalalignment='left')
+plt.text(C[0], C[1], 'C', fontsize=12, verticalalignment='top', horizontalalignment='left')
+
 lambdas = np.linspace(-5, 5, 100)
 bisector_points = B.reshape(2,1) + L.reshape(2,1) * lambdas
 
