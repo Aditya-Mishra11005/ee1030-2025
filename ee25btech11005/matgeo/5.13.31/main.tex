@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gvv}
+
+\title{2.10.34}
+\author{Aditya Mishra — EE25BTECH11005}
+\date{October 11, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question}
+Let 
+\[
+\vec{a} = \vec{i} - \vec{j}, \quad
+\vec{b} = \vec{j} - \vec{k}, \quad
+\vec{c} = \vec{k} - \vec{i}
+\]
+
+Find the unit vector \(\vec{d}\) such that
+\[
+\vec{a}^T \vec{d} = 0 \quad \text{and} \quad 
+[\vec{b}~\vec{c}~\vec{d}] = 0.
+\]
+
+\section*{Solution}
+
+Calculate \(\vec{b} \times \vec{c}\):
+\[
+\vec{b} = \myvec{0 \\ 1 \\ -1}, \quad
+\vec{c} = \myvec{-1 \\ 0 \\ 1}
+\quad \Rightarrow \quad
+\vec{b} \times \vec{c} = \myvec{1 \\ 1 \\ 1}
+\]
+
+Form matrix
+\[
+\vec{A} = \myvec{
+1 & -1 & 0 \\
+1 & 1 & 1
+}
+\quad\text{where}\quad
+\vec{A} = \myvec{\vec{a} \ \vec{b} \times \vec{c}}^\top.
+\]
+
+Solving \(\vec{A}^\top \vec{d} = 0\)
+
+Form augmented matrix:
+\[
+\augvec{3}{1}{
+1 & -1 & 0 & 0 \\
+1 & 1 & 1 & 0
+}
+\quad \xrightarrow{R_2 - R_1} \quad
+\augvec{3}{1}{
+1 & -1 & 0 & 0 \\
+0 & 2 & 1 & 0
+}
+\]
+
+Back-substitution gives:
+\[
+\vec{d} = k\myvec{1 \\ 1 \\ -2}
+\]
+where \(k\) is a scalar.
+
+Since \(\vec{d}\) is a unit vector:
+\[
+\norm{\vec{d}} = 1 
+\implies k = \pm \frac{1}{\sqrt{6}}
+\]
+
+\[
+\boxed{
+\vec{d} = \pm \frac{\vec{i} + \vec{j} - 2\vec{k}}{\sqrt{6}}
+}
+\]
+
+\end{document}
+
