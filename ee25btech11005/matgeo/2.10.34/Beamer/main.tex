@@ -1,0 +1,99 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gvv}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{\textbf{2.10.34}}
+\author{\textbf{Aditya Mishra — EE25BTECH11005}}
+\date{October 11, 2025}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Question}
+Let $\vec{a} = \mathbf{i} - \mathbf{j}$, $\vec{b} = \mathbf{j} - \mathbf{k}$, and $\vec{c} = \mathbf{k} - \mathbf{i}$.  
+If $\vec{d}$ is a unit vector such that  
+\[
+\vec{a} \cdot \vec{d} = 0 = [\vec{b}~\vec{c}~\vec{d}],
+\]
+then $\vec{d}$ equals:
+
+\end{frame}
+
+
+\begin{frame}{Given Condition}
+We have:
+\[
+[\vec{b}~\vec{c}~\vec{d}] = 0
+\]
+This implies that $\vec{d}$ is linearly dependent on $\vec{b}$ and $\vec{c}$:
+\[
+\vec{d} = k\myvec{\vec{b} \ \vec{c}}\myvec{\lambda \\ 1}
+\]
+\end{frame}
+\begin{frame}{Using $\vec{a}^T \vec{d} = 0$}
+Since $\vec{a}^T \vec{d} = 0$:
+\begin{align*}
+k\vec{a}^T (\vec{c} + \lambda \vec{b}) &= 0 \\
+\implies \vec{a}^T \vec{c} + \lambda \vec{a}^T \vec{b} &= 0
+\end{align*}
+
+Thus,
+\[
+\lambda = -\frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}
+\]
+\end{frame}
+
+\begin{frame}{Substitute $\lambda$ back}
+Substituting for $\lambda$:
+\[
+\vec{d} = k\left(\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}\vec{b}\right)
+\]
+
+For a unit vector $\vec{d}$:
+\[
+\|\vec{d}\| = 1 \quad \implies \quad 
+k = \pm \frac{1}{\left\|\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}\vec{b}\right\|}
+\]
+\end{frame}
+\begin{frame}{Final Vector Form}
+Therefore,
+\[
+\vec{d} = \pm \frac{(
+\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b})
+}{
+\left\|\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b}\right\|
+}
+\]
+\end{frame}
+\begin{frame}{Substituting Values}
+Given:
+\[
+\vec{a} = \mathbf{i} - \mathbf{j}, \quad 
+\vec{b} = \mathbf{j} - \mathbf{k}, \quad 
+\vec{c} = \mathbf{k} - \mathbf{i}
+\]
+Hence,
+\[
+\boxed{
+\vec{d} = \pm \frac{\mathbf{i} + \mathbf{j} - 2\mathbf{k}}{\sqrt{6}}
+}
+\]
+
+\end{frame}
+\begin{frame}{Codes}
+\centering
+For Codes, refer to the URL below:  
+\url{https://github.com/Aditya-Mishra11005/ee1030-2025/tree/main/ee25btech11005/matgeo/2.10.34/Codes}
+\end{frame}
+\end{document}
+

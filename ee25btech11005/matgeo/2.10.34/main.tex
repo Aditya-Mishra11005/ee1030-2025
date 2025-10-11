@@ -1,0 +1,81 @@
+\documentclass[14pt]{extarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gvv}
+\usepackage{graphicx}
+\usepackage{multicol}
+\title{\textbf{2.10.34}}
+\author{\textbf{Aditya Mishra-EE25BTECH11005}}
+\date{October 11, 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Question}
+Let $\vec{a} = \mathbf{i} - \mathbf{j}$, $\vec{b} = \mathbf{j} - \mathbf{k}$, $\vec{c} = \mathbf{k} - \mathbf{i}$.  
+If $\vec{d}$ is a unit vector such that $\vec{a} \cdot \vec{d} = 0 = [\vec{b}~\vec{c}~\vec{d}]$,  
+then $\vec{d}$ equals
+
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $\pm \frac{{\vec{i} + \vec{j} - 2\vec{k}}}{\sqrt{6}}$
+    \item $\pm \frac{{\vec{i} + \vec{j} + \vec{k}}}{\sqrt{3}}$
+    \item $\pm \frac{{\vec{i} + \vec{j} - \vec{k}}}{\sqrt{3}}$
+    \item $\pm {\vec{i} + \vec{j} - \vec{k}}$
+\end{enumerate}
+\end{multicols}
+
+\section*{Solution}
+
+Given:
+\begin{equation}
+[\vec{b}~\vec{c}~\vec{d}] = 0
+\end{equation}
+This implies $\vec{d}$ is linearly dependant on $\vec{b}$ and $\vec{c}$
+\begin{equation}
+\implies \vec{d} = k\myvec{\vec{b} \ \vec{c}}\myvec{\lambda \\ 1}
+\end{equation}
+Now, since $\vec{a}^T \vec{d} = 0$,
+\begin{align}
+k\vec{a}^T (\vec{c} + \lambda \vec{b}) = 0 \\
+\implies \vec{a}^T \vec{c} + \lambda \vec{a}^T \vec{b} = 0
+\end{align}
+\begin{equation}
+\lambda = -\frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}
+\end{equation}
+Substitute this value of $\lambda$ back:
+\begin{equation}
+\vec{d} = k(\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b})
+\end{equation}
+To find k:
+\begin{equation}
+\|\vec{d}|\ = 1
+\end{equation}
+\begin{equation}
+k = \pm \frac{1}{\|\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b}\|}
+\end{equation}
+
+\begin{equation}
+    \vec{d} = \pm \frac{(\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b})}{\|\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b}\|}
+\end{equation}
+
+\section*{Substituting Numbers}
+
+Given:
+\begin{align}
+\vec{a} = \mathbf{i} - \mathbf{j}, \quad \vec{b} = \mathbf{j} - \mathbf{k}, \quad \vec{c} = \mathbf{k} - \mathbf{i}
+\end{align}
+So,
+\begin{equation}
+\vec{d} = \pm \frac{\mathbf{i} + \mathbf{j} - 2\mathbf{k}}{\sqrt{6}}
+\end{equation}
+
+\section*{Answer: Option 1}
+\[
+\boxed{
+\vec{d} = \pm \frac{\mathbf{i} + \mathbf{j} - 2\mathbf{k}}{\sqrt{6}}
+}
+\]
+
+\end{document}
+
