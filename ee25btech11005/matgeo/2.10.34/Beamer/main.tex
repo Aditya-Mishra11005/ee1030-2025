@@ -2,12 +2,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{gvv}
-\usepackage{graphicx}
-\usepackage{multicol}
-\usepackage{enumitem}
-
 \usetheme{Madrid}
-\usecolortheme{default}
 
 \title{\textbf{2.10.34}}
 \author{\textbf{Aditya Mishra — EE25BTECH11005}}
@@ -20,75 +15,74 @@
 \end{frame}
 
 \begin{frame}{Question}
-Let $\vec{a} = \mathbf{i} - \mathbf{j}$, $\vec{b} = \mathbf{j} - \mathbf{k}$, and $\vec{c} = \mathbf{k} - \mathbf{i}$.  
-If $\vec{d}$ is a unit vector such that  
-\[
-\vec{a} \cdot \vec{d} = 0 = [\vec{b}~\vec{c}~\vec{d}],
-\]
-then $\vec{d}$ equals:
-
+Let 
+\begin{align}
+\vec{a} = \vec{i} - \vec{j}, \quad
+\vec{b} = \vec{j} - \vec{k}, \quad
+\vec{c} = \vec{k} - \vec{i}
+\end{align}
+Find the unit vector \(\vec{d}\) such that
+\begin{align}
+\vec{a}^T \vec{d} = 0 \quad \text{and} \quad 
+[\vec{b}~\vec{c}~\vec{d}] = 0.
+\end{align}
 \end{frame}
 
+\begin{frame}{Solution}
+Calculate \(\vec{b} \times \vec{c}\):
+\begin{align}
+\vec{b} = \myvec{0 \\ 1 \\ -1}, \quad
+\vec{c} = \myvec{-1 \\ 0 \\ 1}
+\quad \Rightarrow \quad
+\vec{b} \times \vec{c} = \myvec{1 \\ 1 \\ 1}
+\end{align}
 
-\begin{frame}{Given Condition}
-We have:
-\[
-[\vec{b}~\vec{c}~\vec{d}] = 0
-\]
-This implies that $\vec{d}$ is linearly dependent on $\vec{b}$ and $\vec{c}$:
-\[
-\vec{d} = k\myvec{\vec{b} \ \vec{c}}\myvec{\lambda \\ 1}
-\]
-\end{frame}
-\begin{frame}{Using $\vec{a}^T \vec{d} = 0$}
-Since $\vec{a}^T \vec{d} = 0$:
-\begin{align*}
-k\vec{a}^T (\vec{c} + \lambda \vec{b}) &= 0 \\
-\implies \vec{a}^T \vec{c} + \lambda \vec{a}^T \vec{b} &= 0
-\end{align*}
-
-Thus,
-\[
-\lambda = -\frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}
-\]
-\end{frame}
-
-\begin{frame}{Substitute $\lambda$ back}
-Substituting for $\lambda$:
-\[
-\vec{d} = k\left(\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}\vec{b}\right)
-\]
-
-For a unit vector $\vec{d}$:
-\[
-\|\vec{d}\| = 1 \quad \implies \quad 
-k = \pm \frac{1}{\left\|\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}}\vec{b}\right\|}
-\]
-\end{frame}
-\begin{frame}{Final Vector Form}
-Therefore,
-\[
-\vec{d} = \pm \frac{(
-\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b})
-}{
-\left\|\vec{c} - \frac{\vec{a}^T \vec{c}}{\vec{a}^T \vec{b}} \vec{b}\right\|
+Form matrix
+\begin{align}
+\vec{A} = \myvec{
+1 & -1 & 0 \\
+1 & 1 & 1
 }
-\]
+\quad\text{where}\quad
+\vec{A} = \myvec{\vec{a} \ \vec{b} \times \vec{c}}^\top.
+\end{align}
 \end{frame}
-\begin{frame}{Substituting Values}
-Given:
-\[
-\vec{a} = \mathbf{i} - \mathbf{j}, \quad 
-\vec{b} = \mathbf{j} - \mathbf{k}, \quad 
-\vec{c} = \mathbf{k} - \mathbf{i}
-\]
-Hence,
-\[
+
+\begin{frame}{Solution}
+Solving \(\vec{A}^\top \vec{d} = 0\)
+
+Form augmented matrix:
+\begin{align}
+\augvec{3}{1}{
+1 & -1 & 0 & 0 \\
+1 & 1 & 1 & 0
+}
+\quad \xrightarrow{R_2 - R_1} \quad
+\augvec{3}{1}{
+1 & -1 & 0 & 0 \\
+0 & 2 & 1 & 0
+}
+\end{align}
+
+Back-substitution gives:
+\begin{align}
+\vec{d} = k\myvec{1 \\ 1 \\ -2}
+\end{align}
+where \(k\) is a scalar.
+\end{frame}
+
+\begin{frame}{Solution}
+Since \(\vec{d}\) is a unit vector:
+\begin{align}
+\norm{\vec{d}} = 1 
+\implies k = \pm \frac{1}{\sqrt{6}}
+\end{align}
+
+\begin{align}
 \boxed{
-\vec{d} = \pm \frac{\mathbf{i} + \mathbf{j} - 2\mathbf{k}}{\sqrt{6}}
+\vec{d} = \pm \frac{\vec{i} + \vec{j} - 2\vec{k}}{\sqrt{6}}
 }
-\]
-
+\end{align}
 \end{frame}
 \begin{frame}{Codes}
 \centering
