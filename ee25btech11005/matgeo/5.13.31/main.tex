@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gvv}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\title{\textbf{5.13.31}}
+\author{\textbf{Aditya Mishra — EE25BTECH11005}}
+\date{October 11, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question}
+Let \(\vec{A}\) and \(\vec{B}\) be \(3 \times 3\) matrices of real numbers, where \(\vec{A}\) is symmetric, \(\vec{B}\) is skew-symmetric and 
+\[
+(\vec{A} + \vec{B})(\vec{A} - \vec{B}) = (\vec{A} - \vec{B})(\vec{A} + \vec{B}).
+\]
+If 
+\[
+(\vec{A}\vec{B})^\top = (-1)^k \vec{A}\vec{B},
+\]
+where \((\vec{A}\vec{B})^\top\) is the transpose of the matrix \(\vec{A}\vec{B}\), find the value(s) of \(k\).
+
+Given:
+\begin{itemize}
+    \item \(\vec{A}\) is symmetric: \(\vec{A}^\top = \vec{A}\)
+    \item \(\vec{B}\) is skew-symmetric: \(\vec{B}^\top = -\vec{B}\)
+\end{itemize}
+
+\section*{Expanding the Given Equation}
+Expand both sides of 
+\[
+(\vec{A} + \vec{B})(\vec{A} - \vec{B}) = (\vec{A} - \vec{B})(\vec{A} + \vec{B})
+\]
+Left:
+\[
+= \vec{A}^2 - \vec{A}\vec{B} + \vec{B}\vec{A} - \vec{B}^2
+\]
+Right:
+\[
+= \vec{A}^2 + \vec{A}\vec{B} - \vec{B}\vec{A} - \vec{B}^2
+\]
+
+\section*{Simplifying the Equation}
+Set both expansions equal:
+\[
+\vec{A}^2 - \vec{A}\vec{B} + \vec{B}\vec{A} - \vec{B}^2 = \vec{A}^2 + \vec{A}\vec{B} - \vec{B}\vec{A} - \vec{B}^2
+\]
+Subtract \(\vec{A}^2\) and \(-\vec{B}^2\) from both sides:
+\[
+- \vec{A}\vec{B} + \vec{B}\vec{A} = \vec{A}\vec{B} - \vec{B}\vec{A}
+\]
+\[
+2\vec{B}\vec{A} = 2\vec{A}\vec{B}
+\]
+\[
+\implies \vec{A}\vec{B} = \vec{B}\vec{A}
+\]
+So \(\vec{A}\) and \(\vec{B}\) commute.
+
+\section*{Transpose of the Product}
+We have:
+\[
+(\vec{A}\vec{B})^\top = \vec{B}^\top\vec{A}^\top
+\]
+Using properties,
+\[
+= (-\vec{B})\vec{A} = -\vec{B}\vec{A}
+\]
+But since they commute:
+\[
+= -\vec{A}\vec{B}
+\]
+Thus,
+\[
+(\vec{A}\vec{B})^\top = -\vec{A}\vec{B}
+\]
+
+\section*{Solving for \(k\)}
+Given,
+\[
+(\vec{A}\vec{B})^\top = (-1)^k\vec{A}\vec{B}
+\]
+So,
+\[
+- \vec{A}\vec{B} = (-1)^k \vec{A}\vec{B}
+\]
+If \(\vec{A}\vec{B} \neq 0\), comparing:
+\[
+-1 = (-1)^k
+\]
+So \(k\) must be odd.
+
+\section*{\textbf{Final Answer}}
+\[
+\boxed{
+k \text{ is any odd integer}.
+}
+\]
+
+\end{document}
+

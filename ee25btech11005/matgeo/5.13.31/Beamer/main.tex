@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gvv}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title{\textbf{5.13.31}}
+\author{\textbf{Aditya Mishra — EE25BTECH11005}}
+\date{October 11, 2025}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Question}
+Let \(\vec{A}\) and \(\vec{B}\) be \(3 \times 3\) matrices of real numbers, where \(\vec{A}\) is symmetric, \(\vec{B}\) is skew-symmetric and 
+\[
+(\vec{A} + \vec{B})(\vec{A} - \vec{B}) = (\vec{A} - \vec{B})(\vec{A} + \vec{B}).
+\]
+If 
+\[
+(\vec{A}\vec{B})^\top = (-1)^k \vec{A}\vec{B},
+\]
+where \((\vec{A}\vec{B})^\top\) is the transpose of the matrix \(\vec{A}\vec{B}\), find the value(s) of \(k\).
+\end{frame}
+
+\begin{frame}{Matrix Properties}
+Given:
+\begin{itemize}
+    \item \(\vec{A}\) is symmetric: \(\vec{A}^\top = \vec{A}\)
+    \item \(\vec{B}\) is skew-symmetric: \(\vec{B}^\top = -\vec{B}\)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Expanding the Given Equation}
+Expand both sides of 
+\[
+(\vec{A} + \vec{B})(\vec{A} - \vec{B}) = (\vec{A} - \vec{B})(\vec{A} + \vec{B})
+\]
+Left:
+\[
+= \vec{A}^2 - \vec{A}\vec{B} + \vec{B}\vec{A} - \vec{B}^2
+\]
+Right:
+\[
+= \vec{A}^2 + \vec{A}\vec{B} - \vec{B}\vec{A} - \vec{B}^2
+\]
+\end{frame}
+
+\begin{frame}{Simplifying the Equation}
+Set both expansions equal:
+\[
+\vec{A}^2 - \vec{A}\vec{B} + \vec{B}\vec{A} - \vec{B}^2 = \vec{A}^2 + \vec{A}\vec{B} - \vec{B}\vec{A} - \vec{B}^2
+\]
+Subtract \(\vec{A}^2\) and \(-\vec{B}^2\) from both sides:
+\[
+- \vec{A}\vec{B} + \vec{B}\vec{A} = \vec{A}\vec{B} - \vec{B}\vec{A}
+\]
+\[
+2\vec{B}\vec{A} = 2\vec{A}\vec{B}
+\]
+\[
+\implies \vec{A}\vec{B} = \vec{B}\vec{A}
+\]
+So \(\vec{A}\) and \(\vec{B}\) commute.
+\end{frame}
+
+\begin{frame}{Transpose of the Product}
+We have:
+\[
+(\vec{A}\vec{B})^\top = \vec{B}^\top\vec{A}^\top
+\]
+Using properties,
+\[
+= (-\vec{B})\vec{A} = -\vec{B}\vec{A}
+\]
+But since they commute:
+\[
+= -\vec{A}\vec{B}
+\]
+Thus,
+\[
+(\vec{A}\vec{B})^\top = -\vec{A}\vec{B}
+\]
+\end{frame}
+
+\begin{frame}{Solving for \(k\)}
+Given,
+\[
+(\vec{A}\vec{B})^\top = (-1)^k\vec{A}\vec{B}
+\]
+So,
+\[
+- \vec{A}\vec{B} = (-1)^k \vec{A}\vec{B}
+\]
+If \(\vec{A}\vec{B} \neq 0\), comparing:
+\[
+-1 = (-1)^k
+\]
+So \(k\) must be odd.
+\end{frame}
+
+\begin{frame}{\textbf{Final Answer}}
+\[
+\boxed{
+k \text{ is any odd integer}.
+}
+\]
+\end{frame}
+
+\begin{frame}{Codes}
+\centering
+For Codes, refer to the URL below:  
+\url{https://github.com/Aditya-Mishra11005/ee1030-2025/tree/main/ee25btech11005/matgeo/5.13.31/Codes}
+\end{frame}
+
+\end{document}
+
