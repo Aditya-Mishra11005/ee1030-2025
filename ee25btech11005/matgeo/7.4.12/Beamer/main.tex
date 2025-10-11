@@ -1,0 +1,94 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gvv}
+\usetheme{Madrid}
+
+\title{\textbf{7.4.12}}
+\author{\textbf{Aditya Mishra — EE25BTECH11005}}
+\date{October 12, 2025}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Question}
+The centres of a set of circles, each of radius \(3\), lie on the circle $x^2 + y^2 = 25$
+Find the locus of any point \(\vec{x}\) in the set.
+\end{frame}
+
+\begin{frame}{Solution}
+For a circle,
+\begin{align}
+\vec{u} = -\vec{c}, \quad f = \norm{\vec{u}}^2 - r^2
+\end{align}
+Hence, the general equation is
+\begin{align}
+\norm{\vec{x}}^2 + 2\vec{u}^T\vec{x} + f = 0
+\end{align}
+For this family,
+\begin{align}
+\norm{\vec{u}} = 5, \quad r = 3, \quad f = 25 - 9 = 16
+\end{align}
+Thus,
+\begin{align}
+\norm{\vec{x}}^2 + 2\vec{u}^T\vec{x} + 16 \le 0
+\end{align}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{align}
+2\vec{u}^T\vec{x} \le -\norm{\vec{x}}^2 - 16
+\end{align}
+Since \(\norm{\vec{u}} = 5\),by Cauchy-Schwartz Inequality:
+\begin{align}
+-5\norm{\vec{x}} \le \vec{u}^T\vec{x} \le 5\norm{\vec{x}}
+\end{align}
+The minimum value of \(2\vec{u}^T\vec{x}\) is \(-10\norm{\vec{x}}\).  
+Hence, existence requires
+\begin{align}
+-10\norm{\vec{x}} \le -\norm{\vec{x}}^2 - 16
+\end{align}
+\end{frame}
+
+\begin{frame}{Solution}
+\begin{align}
+\norm{\vec{x}}^2 - 10\norm{\vec{x}} + 16 \le 0
+\end{align}
+Let \(t = \norm{\vec{x}}\). Then
+\begin{align}
+t^2 - 10t + 16 \le 0
+\end{align}
+\begin{align}
+\Rightarrow (t - 2)(t - 8) \le 0
+\end{align}
+\begin{align}
+\Rightarrow 2 \le t \le 8
+\end{align}
+\end{frame}
+
+\begin{frame}{Locus}
+\begin{align}
+2 \le \norm{\vec{x}} \le 8
+\quad \Rightarrow \quad
+4 \le \vec{x}^T\vec{x} \le 64
+\end{align}
+\[
+\boxed{4 \le $x^2 + y^2$ \le 64}
+\]
+\end{frame}
+\begin{frame}{Figure}
+    \centering
+    \includegraphics[width=0.6\columnwidth]{Figs/Figure_1.png}
+    \caption{Plot}
+\end{frame}
+\begin{frame}{Codes}
+\centering
+For Codes, refer to:  
+\url{https://github.com/Aditya-Mishra11005/ee1030-2025/tree/main/ee25btech11005/matgeo/7.4.12/Codes}
+\end{frame}
+
+\end{document}
+
