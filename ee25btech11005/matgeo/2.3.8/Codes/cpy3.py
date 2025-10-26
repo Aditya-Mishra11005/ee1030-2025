@@ -1,4 +1,3 @@
-\begin{lstlisting}[language=Python]
 import numpy as np
 import ctypes
 lib = ctypes.CDLL('./vector_calcs.so')
