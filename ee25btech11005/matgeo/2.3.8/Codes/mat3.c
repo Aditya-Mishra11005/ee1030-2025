@@ -20,5 +20,5 @@ double angle_deg(double *a, double *b) {
 }
 int collinear(double *a, double *b) {
     double ang = angle_deg(a, b);
-    return (ang < 1e-8 || fabs(ang - 180) < 1e-8);
+    return (fabs(ang - 180) < 1e-8);
 }
